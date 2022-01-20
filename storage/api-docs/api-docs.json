@@ -1,0 +1,75 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/servicio/public/api/productos": {
+            "get": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Lista de productos",
+                "description": "Aquí podrás ver la lista de los productos de la tienda. Ten en cuenta que debes ingresar el siguiente token: Bearer YugAmlec3fZINlINjcVWsiQ3r6cxlgreFgWmGLv3jpHtSzi3PeuqCkWESyYB en el botón superior llamado Authorze",
+                "operationId": "productos",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/servicio/public/api/productos/consultar/{id}": {
+            "get": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Consultar un producto por ID",
+                "description": "Aquí podrás consultar un producto por ID de la lista de productos de la tienda. Ten en cuenta que debes ingresar el siguiente token: Bearer YugAmlec3fZINlINjcVWsiQ3r6cxlgreFgWmGLv3jpHtSzi3PeuqCkWESyYB en el botón superior llamado Authorze",
+                "operationId": "productos",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "producto Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header",
+                "scheme": "Bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
